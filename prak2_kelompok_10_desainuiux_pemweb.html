@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pemesanan Barang</title>
+</head>
+
+<body bgcolor="#eeeeee">
+
+<!-- HALAMAN FORM PEMESANAN -->
+<div id="formPemesanan">
+
+    <center>
+        <h3>Form Pemesanan Barang</h3>
+    </center>
+
+    <hr>
+
+    <!-- MENU SEBELUM GENERATE -->
+    <center>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr>
+                <td><a href="#" onclick="return false;">Home</a></td>
+                <td>
+                    <a href="#"
+                       onclick="generateLink(); return false;">
+                       Generate Link
+                    </a>
+                </td>
+                <td>
+                    <a href="#"
+                       onclick="alert('Belum ada riwayat transaksi'); return false;">
+                       Transaction History
+                    </a>
+                </td>
+                <td><a href="#" onclick="return false;">Policy</a></td>
+                <td><a href="#" onclick="return false;">Logout</a></td>
+            </tr>
+        </table>
+    </center>
+
+    <br>
+
+    <table border="0" cellpadding="5">
+        <tr>
+            <td rowspan="6" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <table border="1" cellpadding="0"
+                                   cellspacing="0" width="100"
+                                   height="100">
+                                <tr>
+                                    <td>
+                                        <svg width="100" height="100"
+                                             viewBox="0 0 100 100">
+                                            <line x1="0" y1="0"
+                                                  x2="100" y2="100"
+                                                  stroke="gray"/>
+                                            <line x1="100" y1="0"
+                                                  x2="0" y2="100"
+                                                  stroke="gray"/>
+                                        </svg>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="file" id="gambar"
+                                   accept="image/*">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <td>Title Here</td>
+            <td>:</td>
+            <td>
+                <input type="text" id="judul"
+                       value="MacBook Air E800" size="30">
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top">Description</td>
+            <td valign="top">:</td>
+            <td>
+                <textarea id="deskripsi" rows="4" cols="30">Year : 2009
+Model :
+Condition : Mint</textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Account Number</td>
+            <td>:</td>
+            <td>
+                <input type="text" id="rekening"
+                       value="123-456-789-0" size="30">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Bank</td>
+            <td>:</td>
+            <td>
+                <select id="bank">
+                    <option>HSBC</option>
+                    <option>BCA</option>
+                    <option>BRI</option>
+                    <option>BNI</option>
+                    <option>Mandiri</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Account Holder</td>
+            <td>:</td>
+            <td>
+                <input type="text" id="pemilik"
+                       value="Name Here" size="30">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Transaction</td>
+            <td>:</td>
+            <td>
+                <select id="jumlah">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <br>
+                <input type="checkbox" id="transaksi" checked>
+                Send to Mobile Phone
+                <br>
+                <input type="checkbox" id="salinan" checked>
+                Send to Email
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>Send to Mobile Phone</td>
+            <td>:</td>
+            <td>
+                <input type="text" id="hp"
+                       value="1234567890, 1234567891" size="30">
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>Send to Email</td>
+            <td>:</td>
+            <td>
+                <input type="email" id="email"
+                       value="nama123@gmail.com" size="30">
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <center>
+        <button type="button" onclick="generateLink()">
+            Generate New Link
+        </button>
+    </center>
+
+</div>
+
+
+<!-- HALAMAN HASIL PEMESANAN -->
+<div id="hasilPemesanan" hidden>
+
+    <center>
+        <h3>Hasil Pemesanan Barang</h3>
+    </center>
+
+    <hr>
+
+    <!-- MENU SETELAH GENERATE -->
+    <center>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr>
+                <td>
+                    <a href="#"
+                       onclick="kembali(); return false;">Home</a>
+                </td>
+                <td>
+                    <a href="#"
+                       onclick="kembali(); return false;">Register</a>
+                </td>
+                <td><a href="#" onclick="return false;">Policy</a></td>
+                <td><a href="#" onclick="return false;">About</a></td>
+            </tr>
+        </table>
+    </center>
+
+    <br>
+
+    <table border="0" cellpadding="5">
+        <tr>
+            <td rowspan="6" valign="top">
+                <table border="1" cellpadding="0" cellspacing="0"
+                       width="100" height="100">
+                    <tr>
+                        <td>
+                            <svg id="gambarSilang" width="100"
+                                 height="100" viewBox="0 0 100 100">
+                                <line x1="0" y1="0" x2="100" y2="100"
+                                      stroke="gray"/>
+                                <line x1="100" y1="0" x2="0" y2="100"
+                                      stroke="gray"/>
+                            </svg>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <td>Title Here</td>
+            <td>:</td>
+            <td><span id="hasilJudul"></span></td>
+        </tr>
+
+        <tr>
+            <td valign="top">Description</td>
+            <td valign="top">:</td>
+            <td><pre id="hasilDeskripsi"></pre></td>
+        </tr>
+
+        <tr>
+            <td>Total Amount</td>
+            <td>:</td>
+            <td>€800</td>
+        </tr>
+
+        <tr>
+            <td>Pay to</td>
+            <td>:</td>
+            <td><span id="hasilRekening"></span></td>
+        </tr>
+
+        <tr>
+            <td>Payment Type</td>
+            <td>:</td>
+            <td><span id="hasilBank"></span></td>
+        </tr>
+
+        <tr>
+            <td>Account Holder</td>
+            <td>:</td>
+            <td><span id="hasilPemilik"></span></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>Account No</td>
+            <td>:</td>
+            <td><span id="hasilNomor"></span></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span id="hasilTransaksi"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>Send to Mobile Phone</td>
+            <td>:</td>
+            <td><span id="hasilHP"></span></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>Send to Email</td>
+            <td>:</td>
+            <td><span id="hasilEmail"></span></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <center>
+        <button type="button" onclick="bayar()">
+            Pay using Quick Link
+        </button>
+
+        <p id="pesan"></p>
+    </center>
+
+</div>
+
+
+<script>
+function generateLink() {
+    document.getElementById("hasilJudul").textContent =
+        document.getElementById("judul").value;
+
+    document.getElementById("hasilDeskripsi").textContent =
+        document.getElementById("deskripsi").value;
+
+    document.getElementById("hasilRekening").textContent =
+        document.getElementById("rekening").value;
+
+    document.getElementById("hasilNomor").textContent =
+        document.getElementById("rekening").value;
+
+    document.getElementById("hasilBank").textContent =
+        document.getElementById("bank").value;
+
+    document.getElementById("hasilPemilik").textContent =
+        document.getElementById("pemilik").value;
+
+    document.getElementById("hasilHP").textContent =
+        document.getElementById("hp").value;
+
+    document.getElementById("hasilEmail").textContent =
+        document.getElementById("email").value;
+
+    let transaksi = "";
+
+    if (document.getElementById("transaksi").checked) {
+        transaksi += "Send to Mobile Phone<br>";
+    }
+
+    if (document.getElementById("salinan").checked) {
+        transaksi += "Send to Email";
+    }
+
+    document.getElementById("hasilTransaksi").innerHTML =
+        transaksi;
+
+    let file = document.getElementById("gambar").files[0];
+
+    if (file) {
+        let pembaca = new FileReader();
+
+        pembaca.onload = function(e) {
+            let gambarLama = document.getElementById("gambarSilang");
+            let img = document.createElement("img");
+
+            img.src = e.target.result;
+            img.width = 100;
+            img.height = 100;
+            img.alt = "Gambar barang";
+            img.id = "gambarSilang";
+
+            gambarLama.replaceWith(img);
+        };
+
+        pembaca.readAsDataURL(file);
+    }
+
+    document.getElementById("formPemesanan").hidden = true;
+    document.getElementById("hasilPemesanan").hidden = false;
+}
+
+function kembali() {
+    document.getElementById("formPemesanan").hidden = false;
+    document.getElementById("hasilPemesanan").hidden = true;
+    document.getElementById("pesan").textContent = "";
+}
+
+function bayar() {
+    document.getElementById("pesan").textContent =
+        "Informasi pemesanan siap diproses.";
+}
+</script>
+
+</body>
+</html>
